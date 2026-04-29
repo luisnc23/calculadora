@@ -1,0 +1,294 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0f1e2d;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 18px;
+  padding: 18px;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: linear-gradient(180deg, #17283a, #0d1b2a);
+  color: white;
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.sidebar h2 {
+  color: #4ade80;
+}
+
+.sidebar p {
+  color: #cbd5e1;
+}
+
+label {
+  display: block;
+  margin-top: 18px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background: #132235;
+  color: white;
+  font-size: 15px;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-red {
+  background: linear-gradient(135deg, #991b1b, #ef4444);
+}
+
+.formula {
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.08);
+  color: #dbeafe;
+  text-align: center;
+  font-size: 18px;
+}
+
+.main {
+  background: #f8fafc;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(135deg, #15803d, #064e3b);
+  color: white;
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.hero span {
+  font-size: 60px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 24px;
+}
+
+.card {
+  background: #effaf3;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.card span {
+  font-weight: bold;
+  color: #334155;
+}
+
+.card h3 {
+  font-size: 29px;
+  color: #047857;
+  margin: 10px 0 0;
+}
+
+.card.blue {
+  background: #eff6ff;
+}
+
+.card.blue h3 {
+  color: #2563eb;
+}
+
+.card.purple {
+  background: #f5f3ff;
+}
+
+.card.purple h3 {
+  color: #7c3aed;
+}
+
+.recorrido {
+  margin: 0 24px 18px;
+  height: 255px;
+  background: linear-gradient(#cce8ff 0 52%, #6fa83f 52% 64%, #2f3f50 64% 84%, #dbeafe 84%);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nube {
+  position: absolute;
+  background: white;
+  width: 70px;
+  height: 25px;
+  border-radius: 30px;
+  top: 35px;
+}
+
+.nube::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: white;
+  border-radius: 50%;
+  left: 18px;
+  top: -18px;
+}
+
+.nube1 { left: 240px; }
+.nube2 { right: 350px; top: 62px; }
+
+.cerros {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 92px;
+  height: 70px;
+  background:
+    radial-gradient(circle at 20% 80%, #5f9f38 0 28%, transparent 29%),
+    radial-gradient(circle at 60% 80%, #6ba83f 0 32%, transparent 33%),
+    radial-gradient(circle at 85% 80%, #5f9f38 0 30%, transparent 31%);
+}
+
+.pista {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 42px;
+  height: 62px;
+  background: #2f3f50;
+}
+
+.linea {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 72px;
+  height: 5px;
+  background: repeating-linear-gradient(90deg, white 0 28px, transparent 28px 55px);
+}
+
+.muneco {
+  position: absolute;
+  left: 20px;
+  bottom: 82px;
+  font-size: 50px;
+  transition: left .8s ease;
+  z-index: 5;
+}
+
+.meta {
+  position: absolute;
+  right: 25px;
+  bottom: 85px;
+  font-size: 48px;
+}
+
+.progreso-texto {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 27px;
+  display: flex;
+  justify-content: space-between;
+  color: #102033;
+}
+
+.barra {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 12px;
+  height: 14px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#progreso {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #16a34a, #2563eb);
+  transition: width .8s ease;
+}
+
+.inferior {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 0 24px 24px;
+}
+
+.grafico-box,
+.tabla-box {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.canvas-box {
+  height: 285px;
+}
+
+.canvas-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #f1f5f9;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+@media (max-width: 1000px) {
+  .app,
+  .cards,
+  .inferior {
+    grid-template-columns: 1fr;
+  }
+}

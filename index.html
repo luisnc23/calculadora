@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Distancia con Cálculo Integral</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <h2>🧮 Calculadora Integral</h2>
+    <p>Ingresa puntos de tiempo y velocidad para calcular el área bajo la curva.</p>
+
+    <label>Tiempo t (horas)</label>
+    <input type="number" id="tiempo" placeholder="Ejemplo: 2">
+
+    <label>Velocidad v(t) km/h</label>
+    <input type="number" id="velocidad" placeholder="Ejemplo: 60">
+
+    <button onclick="agregarPunto()">➕ Agregar punto</button>
+    <button class="btn-red" onclick="limpiarTodo()">🗑 Limpiar todo</button>
+
+    <div class="formula">
+      s = ∫ v(t) dt
+      <br>
+      Área bajo la curva velocidad-tiempo
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="hero">
+      <div>
+        <h1>Calculadora de Distancia con Velocidad Variable</h1>
+        <p>Aplicando cálculo integral para obtener el recorrido total.</p>
+      </div>
+      <span>🛣️</span>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <span>Distancia recorrida</span>
+        <h3 id="distanciaTotal">0 km</h3>
+      </div>
+
+      <div class="card blue">
+        <span>Tiempo total</span>
+        <h3 id="tiempoTotal">0 h</h3>
+      </div>
+
+      <div class="card purple">
+        <span>Velocidad promedio</span>
+        <h3 id="velocidadPromedio">0 km/h</h3>
+      </div>
+    </section>
+
+    <section class="recorrido">
+      <div class="nube nube1"></div>
+      <div class="nube nube2"></div>
+      <div class="cerros"></div>
+      <div class="pista"></div>
+      <div class="linea"></div>
+
+      <div class="muneco" id="muneco">🏃‍♂️</div>
+      <div class="meta">🏁</div>
+
+      <div class="progreso-texto">
+        <b>Progreso visual del recorrido</b>
+        <span id="porcentajeTexto">0%</span>
+      </div>
+
+      <div class="barra">
+        <div id="progreso"></div>
+      </div>
+    </section>
+
+    <section class="inferior">
+      <div class="grafico-box">
+        <h2>📈 Integral de velocidad v(t)</h2>
+        <div class="canvas-box">
+          <canvas id="graficoVelocidad"></canvas>
+        </div>
+      </div>
+
+      <div class="tabla-box">
+        <h2>📋 Puntos ingresados</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Tiempo t</th>
+              <th>Velocidad v(t)</th>
+            </tr>
+          </thead>
+          <tbody id="tabla"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
